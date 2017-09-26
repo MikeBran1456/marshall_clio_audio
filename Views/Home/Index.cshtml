@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 <div class="jumbotron">
     <h1>Clio Audio</h1>
     <p class="lead">Play audio files for Clio's historical sites</p>
@@ -15,9 +15,12 @@
         <p><a class="btn btn-default" href="">Browse My Computer </a></p>
         <p> Play an audio file </p>
         <p><a class="btn btn-default" href="">Choose Audio File...</a></p>
-        <p> Play text-to-speak sample </p>
-        <p><a class="btn btn-default" href="">Play &#9658;</a></p>
-    </div>
+        <p><b>*Play text-to-speak sample</b> </p>
+        <p>This is a test paragraph for the text to speech player to play</p>
+        <button class="butt js--triggerAnimation" onclick="responsiveVoice.speak('This is a test paragraph for the text to speech player to play!', 'UK English Male');"
+                type="button" value="Play">
+            Play &#9658;</button>
+</div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
