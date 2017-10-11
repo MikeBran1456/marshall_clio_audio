@@ -1,0 +1,14 @@
+﻿@model IEnumerable<marshall_clio_audio.Models.AudioFile>
+@{
+    ViewBag.Title = "AudioIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AudioFiles</h2>
+
+<ul>
+    @foreach (var audioFile in Model)
+    {
+        <li>@audioFile.Name</li>
+    }
+</ul>

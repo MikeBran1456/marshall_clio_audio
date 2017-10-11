@@ -117,3 +117,5 @@ c:\users\michaelbranard\source\repos\marshall_clio_audio\obj\Debug\marshall_clio
 c:\users\michaelbranard\source\repos\marshall_clio_audio\obj\Debug\marshall_clio_audio.csproj.CoreCompileInputs.cache
 c:\users\michaelbranard\source\repos\marshall_clio_audio\obj\Debug\marshall_clio_audio.dll
 c:\users\michaelbranard\source\repos\marshall_clio_audio\obj\Debug\marshall_clio_audio.pdb
+C:\Users\michaelbranard\source\repos\marshall_clio_audio\obj\Debug\marshall_clio_audio.Migrations.AddAudioFilesTable.resources
+C:\Users\michaelbranard\source\repos\marshall_clio_audio\obj\Debug\marshall_clio_audio.csproj.GenerateResource.Cache
