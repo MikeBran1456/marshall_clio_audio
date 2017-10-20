@@ -11,10 +11,15 @@
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
-        <p> Upload an audio file </p>
-        <p><a class="btn btn-default" href="">Browse My Computer </a></p>
-        <p> Play an audio file </p>
-        <p><a class="btn btn-default" href="">Choose Audio File...</a></p>
+        <p>@ViewBag.Message</p>
+        <form enctype="multipart/form-data" method="post" action="">
+            <div>
+                <label for="file">Upload an audio file (@ViewBag.FileCount stored):</label>
+                <input class="btn btn-default" type="file" name="file" id="file" required />
+                <br />
+                <button class="btn btn-default" type="submit">Submit</button>
+            </div>
+        </form>
         <p><b>*Play text-to-speak sample</b> </p>
         <p>This is a test paragraph for the text to speech player to play</p>
         <button class="butt js--triggerAnimation" onclick="responsiveVoice.speak('This is a test paragraph for the text to speech player to play', 'UK English Male');"
