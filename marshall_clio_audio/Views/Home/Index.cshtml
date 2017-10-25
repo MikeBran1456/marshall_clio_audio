@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+<div class="jumbotron">
+    <h1>Clio Audio</h1>
+    <p class="lead">Play audio files for Clio's historical sites</p>
+    <p><a href="https://www.theclio.com/web/about" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>@ViewBag.Message</p>
+        <form enctype="multipart/form-data" method="post" action="">
+            <div>
+                <label for="file">Upload an audio file (@ViewBag.FileCount stored):</label>
+                <input class="btn btn-default" type="file" name="file" id="file" required />
+                <br />
+                <button class="btn btn-default" type="submit">Submit</button>
+            </div>
+        </form>
+        <p><b>*Play text-to-speak sample</b> </p>
+        <p>This is a test paragraph for the text to speech player to play</p>
+        <button class="butt js--triggerAnimation" onclick="responsiveVoice.speak('This is a test paragraph for the text to speech player to play', 'UK English Male');"
+                type="button" value="Play">
+            Play &#9658;</button>
+</div>
+    <div class="col-md-4">
+        <h2>AudioFiles</h2>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
