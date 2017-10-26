@@ -1,0 +1,20 @@
+﻿@model marshall_clio_audio.Models.AudioFile
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+
+<ul>
+    <li>File: @Model.Name</li>
+</ul>
+
+@using (Html.BeginForm("DoDelete","AudioFile", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+    <input type="submit" class="btn-danger" value="Delete"/>
+    @Html.ActionLink("Back to files", "Index");
+}
+

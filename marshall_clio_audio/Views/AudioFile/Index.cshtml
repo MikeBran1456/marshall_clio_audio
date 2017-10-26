@@ -1,0 +1,22 @@
+﻿@model IEnumerable<marshall_clio_audio.Models.AudioFile>
+@{
+    ViewBag.Title = "AudioIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AudioFiles</h2>
+
+<table class="table">
+    <tr>
+        <th>File Name</th>
+    </tr>
+    @foreach (var File in Model)
+    {
+        <tr>
+            <td>
+                @File.Name &emsp; &emsp; &emsp; &emsp;
+            @Html.ActionLink("Delete", "Delete", new { id = File.Id })
+        </td>
+        </tr>
+    }
+</table>
