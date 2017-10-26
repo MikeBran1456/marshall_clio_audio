@@ -15,12 +15,17 @@ namespace marshall_clio_audio.Controllers
             _dbContext = new ApplicationDbContext();
         }
         // GET: AudioFile
+        // the file variable collects all entries in the database and 
+        //stores them as a list (using .ToList())
+        //the entries are then pushed into the "Index" view page under the "AudioFile" folder in views
         public ActionResult Index()
         {
             var files = _dbContext.AudioFiles.ToList();
              return View(files);
         }
 
+        //This collects the id of the file we want to delete
+        //and then passes it along to the "Delete" view
         public ActionResult Delete(int id)
         {
             var file = _dbContext.AudioFiles.SingleOrDefault(v => v.Id == id);
@@ -30,7 +35,7 @@ namespace marshall_clio_audio.Controllers
             }
             return View(file);
         }
-
+        //The function to delete the file
         public ActionResult doDelete(int id)
         {
             var file = _dbContext.AudioFiles.SingleOrDefault(v => v.Id == id);
