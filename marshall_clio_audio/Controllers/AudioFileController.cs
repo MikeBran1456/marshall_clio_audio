@@ -24,6 +24,45 @@ namespace marshall_clio_audio.Controllers
              return View(files);
         }
 
+        [HttpPost]
+        public ActionResult Add(HttpPostedFileBase file, String text)
+        {
+            if (file != null && file.ContentLength > 0)
+            {
+                var ctx = new ApplicationDbContext();
+
+                int FileLength = file.ContentLength;
+                byte[] FileContents = new byte[FileLength];
+
+                file.InputStream.Read(FileContents, 0, FileLength);
+
+                AudioFile af = new AudioFile
+                {
+                    Name = text,
+                    WAVData = FileContents
+                };
+                ctx.AudioFiles.Add(af);
+
+                ctx.SaveChanges();
+
+                ViewBag.Message = "File upload was successful.";
+            }
+            else
+            {
+                ViewBag.Message = "Could not upload the file.";
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Add()
+        {
+            var ctx = new ApplicationDbContext();
+
+            return View();
+        }
+
         //This collects the id of the file we want to delete
         //and then passes it along to the "Delete" view
         public ActionResult Delete(int id)

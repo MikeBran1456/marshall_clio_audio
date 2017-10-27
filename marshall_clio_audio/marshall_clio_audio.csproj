@@ -329,6 +329,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\AudioFile\Index.cshtml" />
     <Content Include="Views\AudioFile\Delete.cshtml" />
+    <Content Include="Views\AudioFile\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
