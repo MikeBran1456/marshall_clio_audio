@@ -9,7 +9,7 @@
 <p>@ViewBag.Message</p>
 <form enctype="multipart/form-data" method="post" action="">
     <div>Enter The Site Name as it appears on the clio: </div>
-    <textarea name="text"></textarea>
+    <input name="text" type="text">
     <div>
         <label for="file">Upload an audio file (@ViewBag.FileCount stored):</label>
         <input class="btn btn-default" type="file" name="file" id="file" required />
