@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using marshall_clio_audio.Models;
+using Microsoft.AspNet.Identity;
 
 namespace marshall_clio_audio.Controllers
 {
+    [Authorize]
     public class AudioFileController : Controller
     {
         private ApplicationDbContext _dbContext;
@@ -39,7 +41,9 @@ namespace marshall_clio_audio.Controllers
                 AudioFile af = new AudioFile
                 {
                     Name = text,
-                    WAVData = FileContents
+                    WAVData = FileContents,
+                    userID = User.Identity.GetUserName(),
+                    Verified = false
                 };
                 ctx.AudioFiles.Add(af);
 
@@ -62,7 +66,30 @@ namespace marshall_clio_audio.Controllers
 
             return View();
         }
+        public ActionResult Edit(int id)
+        {
+            var file = _dbContext.AudioFiles.SingleOrDefault(v => v.Id == id);
+            if (file == null)
+            {
+                return HttpNotFound();
+            }
+            return View(file);
+        }
+        //The function to delete the file
+        public ActionResult SubmitEdit(int id, String Text, Boolean truthValue)
+        {
+            var file = _dbContext.AudioFiles.SingleOrDefault(v => v.Id == id);
+            if (file == null)
+            {
+                return HttpNotFound();
+            }
+            file.Name = Text;
+            file.Verified = truthValue;
+            
+            _dbContext.SaveChanges();
 
+            return RedirectToAction("Index");
+        }
         //This collects the id of the file we want to delete
         //and then passes it along to the "Delete" view
         public ActionResult Delete(int id)

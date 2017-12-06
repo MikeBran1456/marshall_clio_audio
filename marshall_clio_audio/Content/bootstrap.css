@@ -274,9 +274,9 @@ table {
   h3 {
     page-break-after: avoid;
   }
-  .navbar {
-    display: none;
-  }
+    .navbar {
+        display: none;
+    }
   .table td,
   .table th {
     background-color: #fff !important;
@@ -4192,6 +4192,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-brand {
+    color: black !important;
   float: left;
   padding: 15px 15px;
   font-size: 18px;
@@ -4384,8 +4385,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+    background-color: #acc7eb;
+    border-color: #e7e7e7;
 }
 
 .navbar-default .navbar-brand {
@@ -4501,12 +4502,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+    background-color: #acc7eb;
+    border-color: rgba(0, 0, 0, 0.075);
 }
 
 .navbar-inverse .navbar-brand {
-  color: #999999;
+  color: #000;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -4516,11 +4517,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-text {
-  color: #999999;
+  color: rgba(255, 255, 255, 0.15)
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+  color: #000000;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,

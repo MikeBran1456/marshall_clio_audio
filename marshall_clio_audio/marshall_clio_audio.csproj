@@ -260,6 +260,14 @@
     <Compile Include="Migrations\201710231636518_InitialCreate.Designer.cs">
       <DependentUpon>201710231636518_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712052251009_Audio_auth.cs" />
+    <Compile Include="Migrations\201712052251009_Audio_auth.Designer.cs">
+      <DependentUpon>201712052251009_Audio_auth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052322138_Fix_id_String.cs" />
+    <Compile Include="Migrations\201712052322138_Fix_id_String.Designer.cs">
+      <DependentUpon>201712052322138_Fix_id_String.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AudioFile.cs" />
@@ -330,6 +338,7 @@
     <Content Include="Views\AudioFile\Index.cshtml" />
     <Content Include="Views\AudioFile\Delete.cshtml" />
     <Content Include="Views\AudioFile\Add.cshtml" />
+    <Content Include="Views\AudioFile\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,6 +362,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710231636518_InitialCreate.resx">
       <DependentUpon>201710231636518_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052251009_Audio_auth.resx">
+      <DependentUpon>201712052251009_Audio_auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052322138_Fix_id_String.resx">
+      <DependentUpon>201712052322138_Fix_id_String.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

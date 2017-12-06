@@ -1,6 +1,6 @@
 ﻿@model marshall_clio_audio.Models.AudioFile
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,14 +16,21 @@
 
     <p>File: @Model.Name</p>
 
-@using (Html.BeginForm("DoDelete","AudioFile", FormMethod.Post))
+@using (Html.BeginForm("SubmitEdit","AudioFile", FormMethod.Post))
 {
     @Html.HiddenFor(m => m.Id)
-    <label class="label-danger">
-        <b>Are you sure you wish to delete?</b>
+    <label>
+        <b>Edit File Information</b>
     </label>
+    <br/>
+    <label>New Name </label>
+    <input type="text" name="Text" value=@Model.Name />
+    <br/>
+    <label>Verified </label>
+    <input id="Remember" type="checkbox" value="true" name="truthValue" />
+    <input type="hidden" value="false" name="truthValue" />
     <div>
-        <input type="submit" class="btn-danger" value="Delete"/>
+        <input type="submit" class="btn-success" value="Update File"/>
     </div>
     @Html.ActionLink("Cancel", "Index");
 }
