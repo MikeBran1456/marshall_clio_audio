@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<b>@ViewBag.Message</b>
+<br/>
 <h2>AudioFiles</h2>
 
 <!--You are free to design this page as you see fit, keep the table element
@@ -11,19 +13,34 @@
     over them and pulling at the name for each. We then put the delete button out next to
     each element. The delete button directs the user to the delete page. The "&emsp;" is a tab.-->
 
-<a href="/AudioFile/Add">Add an Audio File</a>
+<a href="/AudioFile/Add">New Audio File <label class="glyphicon glyphicon-plus"></label></a>
 
-<table class="table table-striped">
+<table class="table table-bordered">
     <tr>
-        <th>File Name</th>
+        <th>File</th>
+        <th>User</th>
+        <th>Verifed</th>
+        <th>Actions</th>
     </tr>
     @foreach (var File in Model)
     {
         <tr>
             <td>
-                @File.Name &emsp; &emsp; &emsp; &emsp;
-            @Html.ActionLink("Delete", "Delete", new { id = File.Id })
-        </td>
+                @File.Name
+            </td>
+            <td>
+                @File.userID
+            </td>
+            <td>
+                @File.Verified
+            </td>
+            <td>
+                ( 
+                @Html.ActionLink("Edit", "Edit", new { id = File.Id }) 
+                | 
+                @Html.ActionLink("Delete", "Delete", new { id = File.Id }) 
+                )
+            </td>
         </tr>
     }
 </table>

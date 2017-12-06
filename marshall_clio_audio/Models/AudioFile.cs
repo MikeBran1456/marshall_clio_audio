@@ -10,5 +10,7 @@ namespace marshall_clio_audio.Models
         public int Id { get; set; }
         public String Name { get; set; }
         public byte[] WAVData { get; set; }
+        public String userID { get; set; }
+        public Boolean Verified { get; set; }
     }
 }

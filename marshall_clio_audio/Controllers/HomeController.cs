@@ -7,6 +7,7 @@ using marshall_clio_audio.Models;
 
 namespace marshall_clio_audio.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()

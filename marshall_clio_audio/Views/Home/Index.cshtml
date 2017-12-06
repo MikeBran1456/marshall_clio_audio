@@ -4,25 +4,24 @@
 <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 <div class="jumbotron">
     <h1>Clio Audio</h1>
-    <p class="lead">Play audio files for Clio's historical sites</p>
-    <p><a href="https://www.theclio.com/web/about" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p class="lead">Store audio files for Clio's historical sites</p>
+    <p><a href="https://www.theclio.com/web/about" class="btn btn-primary btn-lg">Learn more about Clio &raquo;</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p><b>*Play text-to-speak sample</b> </p>
-        <p>This is a test paragraph for the text to speech player to play</p>
-        <button class="butt js--triggerAnimation" onclick="responsiveVoice.speak('This is a test paragraph for the text to speech player to play', 'UK English Male');"
+        <h2>Tech Demo</h2>
+        <p><b>This is an example of the simplicity of ResponsiveVoice.</b> </p>
+        <textarea id="ReadText" class="text-primary"></textarea>
+        <br />
+        <button class="butt js--triggerAnimation" onclick="func()"
                 type="button" value="Play">
             Play &#9658;</button>
+        <script>
+            function func() {
+                var x = document.getElementById("ReadText").value;
+             responsiveVoice.speak(x, 'UK English Male');
+            }
+        </script>
 </div>
-    <div class="col-md-4">
-        <h2>AudioFiles</h2>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
 </div>
