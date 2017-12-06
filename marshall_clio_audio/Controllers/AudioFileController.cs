@@ -110,7 +110,7 @@ namespace marshall_clio_audio.Controllers
         public ActionResult doDelete(int id)
         {
                 var file = _dbContext.AudioFiles.SingleOrDefault(v => v.Id == id);
-                if (User.Identity.GetUserName() == file.userID)
+                if (User.Identity.GetUserName() == file.userID || User.Identity.GetUserName() == "Admin@Admin.com")
                 {
                     if (file == null)
                 {
